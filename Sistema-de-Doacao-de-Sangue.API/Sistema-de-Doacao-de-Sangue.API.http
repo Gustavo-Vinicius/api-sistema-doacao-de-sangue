@@ -1,0 +1,6 @@
+@Sistema_de_Doacao_de_Sangue.API_HostAddress = http://localhost:5133
+
+GET {{Sistema_de_Doacao_de_Sangue.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
