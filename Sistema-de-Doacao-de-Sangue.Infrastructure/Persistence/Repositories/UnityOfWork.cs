@@ -18,10 +18,10 @@ namespace Sistema_de_Doacao_de_Sangue.Infrastructure.Persistence.Repositories
             _context = context;
         }
 
-        public IBaseRepository<Doador> Doadores => throw new NotImplementedException();
-        public IBaseRepository<Endereco> Enderecos => throw new NotImplementedException();
-        public IBaseRepository<Doacao> Doacoes => throw new NotImplementedException();
-        public IBaseRepository<EstoqueSangue> EstoqueSangue => throw new NotImplementedException();
+        public IBaseRepository<Doador> Doadores => _doadores ??= new BaseRepository<Doador>(_context);
+        public IBaseRepository<Endereco> Enderecos => _enderecos ??= new BaseRepository<Endereco>(_context);
+        public IBaseRepository<Doacao> Doacoes => _doacoes ??= new BaseRepository<Doacao>(_context);
+        public IBaseRepository<EstoqueSangue> EstoqueSangue => _estoqueSangue ??= new BaseRepository<EstoqueSangue>(_context);
 
         public async Task<int> CompleteAsync()
         {
