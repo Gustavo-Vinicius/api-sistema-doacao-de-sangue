@@ -13,6 +13,8 @@ namespace Sistema_de_Doacao_de_Sangue.API.Configuration
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
             services.AddScoped<IDoadoresRepository, DoadoresRepository>();
+            
+            services.AddScoped<IDoacaoRepository, DoacaoRepository>();
         }
     }
 }
