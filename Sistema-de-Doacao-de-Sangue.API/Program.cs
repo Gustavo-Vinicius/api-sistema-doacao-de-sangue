@@ -15,6 +15,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDependencyInjection();
 
+
+
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ObterDoadorPorIdQuery).Assembly));
 
 var connectionString = builder.Configuration.GetConnectionString("SistemaDoacaoDeSangue");

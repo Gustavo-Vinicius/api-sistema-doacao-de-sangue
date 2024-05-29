@@ -8,7 +8,7 @@ namespace Sistema_de_Doacao_de_Sangue.API.Configuration
     {
         public AutoMapperConfiguration()
         {
-            CreateMap<Doador, DoadorDTO>();
+            CreateMap<Doador, DoadorDTO>().ReverseMap();
         }
     }
 }

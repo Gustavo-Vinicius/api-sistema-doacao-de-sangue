@@ -29,5 +29,6 @@ namespace Sistema_de_Doacao_de_Sangue.API.Controllers
             var doacoes = await _mediator.Send(query);
             return Ok(doacoes);
         }
+        
     }
 }
