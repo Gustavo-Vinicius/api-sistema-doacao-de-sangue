@@ -16,6 +16,10 @@ namespace Sistema_de_Doacao_de_Sangue.API.Configuration
             
             services.AddScoped<IDoacaoRepository, DoacaoRepository>();
 
+            services.AddScoped<IEstoqueRepository, EstoqueRepository>();
+            
+            services.AddScoped<IRelatoriosRepository, RelatoriosRepository>();
+
             //services.AddAutoMapper(typeof(AutoMapperConfiguration));
         }
     }
