@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Sistema_de_Doacao_de_Sangue.Application.Queries.Relatorios.RelatorioDoacoes.ObterRelatorioDoacoes;
@@ -19,7 +15,7 @@ namespace Sistema_de_Doacao_de_Sangue.API.Controllers
         {
             _mediator = mediator;
         }
-
+        
         [HttpGet("obter-relatorio-de-estoque")]
         public async Task<IActionResult> ObterRelatorioDeEstoqueAsync()
         {
