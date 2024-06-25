@@ -14,10 +14,9 @@
 
 <h2 id="technologies">💻 Technologies</h2>
 
-- list of all technologies you used
-- Java
-- MongoDB
-- NodeJS
+- C#
+- .NET
+- SQL SERVER
 
 <h2 id="started">🚀 Getting started</h2>
 
