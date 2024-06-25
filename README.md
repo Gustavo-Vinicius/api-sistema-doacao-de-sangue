@@ -24,7 +24,12 @@ Here you describe how to run your project locally
 
 <h3>Prerequisites</h3>
 
-Here you list all prerequisites necessary for running your project. For example:
+  To run the project locally, you first need to install the .NET SDK. Make sure it is installed, otherwise you can download it directly from the official .NET website. Also, make sure SQL Server is installed and running on your machine.
+Next, you must clone the project repository. Use the git clone command https://github.com/Gustavo-Vinicius/api-sistema-doacao-de-sangue.git to clone the repository to your local environment.
+After cloning the repository, open the appsettings.json file located in the project directory. Edit the connection string in this file to point to your SQL Server instance.	
+Be sure to replace localhost, YourDatabase, your-username, and your-password with the correct values ​​for your configuration.
+With the settings adjusted, go to the terminal, navigate to the project directory and run the dotnet run command. This command will start the server, allowing you to access the application in the browser. Typically, the application will be available at http://localhost:5000 or http://localhost:5001 if you are using HTTPS.
+By following these steps, you will be able to run the project locally without any problems.
 
 - [NodeJS](https://github.com/)
 - [Git 2](https://github.com)
@@ -34,17 +39,7 @@ Here you list all prerequisites necessary for running your project. For example:
 How to clone your project
 
 ```bash
-git clone your-project-url-in-github
-```
-
-<h3>Config .env variables</h2>
-
-Use the `.env.example` as reference to create your configuration file `.env` with your AWS Credentials
-
-```yaml
-NODE_AWS_REGION=us-east-1
-NODE_AWS_KEY_ID={YOUR_AWS_KEY_ID}
-NODE_AWS_SECRET={YOUR_AWS_SECRET}
+git clone https://github.com/Gustavo-Vinicius/api-sistema-doacao-de-sangue.git
 ```
 
 <h3>Starting</h3>
@@ -52,8 +47,10 @@ NODE_AWS_SECRET={YOUR_AWS_SECRET}
 How to start your project
 
 ```bash
-cd project-name
-npm some-command-to-run
+1º cd api-sistema-doacao-de-sangue
+2º dotnet restore
+3º dotnet ef database update
+4º dotnet run
 ```
 
 <h2 id="routes">📍 API Endpoints</h2>
