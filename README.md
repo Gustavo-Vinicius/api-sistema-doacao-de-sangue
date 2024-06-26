@@ -61,6 +61,8 @@ Here you can list the main routes of your API, and what are their expected reque
 |----------------------|-----------------------------------------------------
 | <kbd>GET /authenticate</kbd>     | retrieves user info see [response details](#get-auth-detail)
 | <kbd>POST /authenticate</kbd>     | authenticate user into the api see [request details](#post-auth-detail)
+| <kbd>POST /api/Doacao/cadastrar-doacaoes</kbd>     | registers donor donations [request details](#post-register-donations)
+| <kbd>GET /api/Doacao/obter-doacoes-por-id</kbd>     | search for donations by donation id [response details](#get-donation-by-id)
 
 <h3 id="get-auth-detail">GET /authenticate</h3>
 
@@ -89,39 +91,38 @@ Here you can list the main routes of your API, and what are their expected reque
   "token": "OwoMRHsaQwyAgVoc3OXmL1JhMVUYXGGBbCTK0GBgiYitwQwjf0gVoBmkbuyy0pSi"
 }
 ```
+<h3 id="post-register-donations">POST /api/Doacao/cadastrar-doacaoes</h3>
 
-<h2 id="colab">🤝 Collaborators</h2>
+**REQUEST**
+```json
+{
+  "cadastrarDoacao": {
+    "doadorId": 0,
+    "dataDoacao": "2024-06-26T11:53:37.657Z",
+    "quantidadeML": 0
+  }
+}
+```
 
-Special thank you for all people that contributed for this project.
+**RESPONSE**
+```json
+{
+  Code 200 : Success
+}
+```
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/61896274?v=4" width="100px;" alt="Fernanda Kipper Profile Picture"/><br>
-        <sub>
-          <b>Fernanda Kipper</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://t.ctcdn.com.br/n7eZ74KAcU3iYwnQ89-ul9txVxc=/400x400/smart/filters:format(webp)/i490769.jpeg" width="100px;" alt="Elon Musk Picture"/><br>
-        <sub>
-          <b>Elon Musk</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="#">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
-        <sub>
-          <b>Steve Jobs</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+<h3 id="get-auth-detail">GET /api/Doacao/obter-doacoes-por-id</h3>
+
+**RESPONSE**
+```json
+{
+  "id": 1,
+  "doadorId": 1,
+  "dataDoacao": "2024-05-28T00:00:00",
+  "quantidadeML": 420,
+  "doador": null
+}
+```
 
 <h2 id="contribute">📫 Contribute</h2>
 
