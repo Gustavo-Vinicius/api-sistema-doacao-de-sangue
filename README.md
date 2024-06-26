@@ -15,7 +15,7 @@
 <h2 id="technologies">💻 Technologies</h2>
 
 - C#
-- .NET
+- .NET 8
 - SQL SERVER
 
 <h2 id="started">🚀 Getting started</h2>
