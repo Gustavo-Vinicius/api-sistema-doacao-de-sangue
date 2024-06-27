@@ -108,13 +108,6 @@ Here you can list the main routes of your API, and what are their expected reque
 }
 ```
 
-**RESPONSE**
-```json
-{
-  Code 200 : Success
-}
-```
-
 <h3 id="get-auth-detail">GET /api/Doacao/obter-doacoes-por-id</h3>
 
 **RESPONSE**
@@ -137,7 +130,7 @@ Here you can list the main routes of your API, and what are their expected reque
   "email": "string",
   "dataNascimento": "2000-09-25T00:00:00",
   "genero": "string",
-  "peso": interiro,
+  "peso": 0,
   "tipoSanguineo": "string",
   "fatorRh": "string"
 }
@@ -153,7 +146,7 @@ Here you can list the main routes of your API, and what are their expected reque
   "email": "string",
   "dataNascimento": "2000-09-25T00:00:00",
   "genero": "string",
-  "peso": interiro,
+  "peso": 0,
   "tipoSanguineo": "string",
   "fatorRh": "string"
  }
@@ -166,9 +159,9 @@ Here you can list the main routes of your API, and what are their expected reque
 ```json
 [
   {
-    "doadorId": interiro,
+    "doadorId": 0,
     "dataDoacao": "2024-07-01T00:00:00",
-    "quantidadeML": interiro
+    "quantidadeML": 0
   }
 ]
 ```
