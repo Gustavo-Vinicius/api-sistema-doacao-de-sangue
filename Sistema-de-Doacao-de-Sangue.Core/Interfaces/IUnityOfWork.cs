@@ -9,6 +9,7 @@ namespace Sistema_de_Doacao_de_Sangue.Core.Interfaces
         IBaseRepository<Endereco> Enderecos { get; }
         IBaseRepository<Doacao> Doacoes { get; }
         IBaseRepository<EstoqueSangue> EstoqueSangue { get; }
+        IBaseRepository<User> User { get; }
         Task<int> CompleteAsync();
     }
 }

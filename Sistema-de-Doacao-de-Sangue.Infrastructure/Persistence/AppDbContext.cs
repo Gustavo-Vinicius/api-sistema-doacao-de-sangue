@@ -14,6 +14,7 @@ namespace Sistema_de_Doacao_de_Sangue.Infrastructure.Persistence
         public DbSet<Doador> Doadors { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<EstoqueSangue> EstoqueSangues { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

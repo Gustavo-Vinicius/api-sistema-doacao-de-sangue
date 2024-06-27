@@ -12,6 +12,7 @@ namespace Sistema_de_Doacao_de_Sangue.Infrastructure.Persistence.Repositories
         private IBaseRepository<Endereco> _enderecos;
         private IBaseRepository<Doacao> _doacoes;
         private IBaseRepository<EstoqueSangue> _estoqueSangue;
+        private IBaseRepository<User> _user;
 
         public UnityOfWork(AppDbContext context)
         {
@@ -22,6 +23,7 @@ namespace Sistema_de_Doacao_de_Sangue.Infrastructure.Persistence.Repositories
         public IBaseRepository<Endereco> Enderecos => _enderecos ??= new BaseRepository<Endereco>(_context);
         public IBaseRepository<Doacao> Doacoes => _doacoes ??= new BaseRepository<Doacao>(_context);
         public IBaseRepository<EstoqueSangue> EstoqueSangue => _estoqueSangue ??= new BaseRepository<EstoqueSangue>(_context);
+        public IBaseRepository<User> User => _user ??= new BaseRepository<User>(_context);
 
         public async Task<int> CompleteAsync()
         {
