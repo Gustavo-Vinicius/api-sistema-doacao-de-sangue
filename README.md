@@ -63,7 +63,11 @@ Here you can list the main routes of your API, and what are their expected reque
 | <kbd>POST /authenticate</kbd>     | authenticate user into the api see [request details](#post-auth-detail)
 | <kbd>POST /api/Doacao/cadastrar-doacaoes</kbd>     | registers donor donations [request details](#post-register-donations)
 | <kbd>GET /api/Doacao/obter-doacoes-por-id</kbd>     | search for donations by donation id [response details](#get-donation-by-id)
-
+| <kbd>GET /api/Doador/obter-doador-por-id</kbd>     | search for donor by id [response details](#get-donor-by-id)
+| <kbd>GET /api/Doador/obter-listagem-de-doadores</kbd>     | get donor list [response details](#get-donor)
+| <kbd>GET /api/Doador/obter-doacoes-por-doador</kbd>     | search for donations by donor [response details](#get-search-donations-by-donor)
+| <kbd>POST /api/Doador/cadastrar-doador</kbd>     | register donor [response details](#post-register-donor)
+| <kbd>PUT /api/Doador/editar-doador</kbd>     | edit donor [response details](#put-edit-donor)
 <h3 id="get-auth-detail">GET /authenticate</h3>
 
 **RESPONSE**
@@ -122,6 +126,80 @@ Here you can list the main routes of your API, and what are their expected reque
   "quantidadeML": 420,
   "doador": null
 }
+```
+
+<h3 id="get-donor-by-id">GET /api/Doador/obter-doador-por-id</h3>
+
+**RESPONSE**
+```json
+{
+  "nomeCompleto": "string",
+  "email": "string",
+  "dataNascimento": "2000-09-25T00:00:00",
+  "genero": "string",
+  "peso": interiro,
+  "tipoSanguineo": "string",
+  "fatorRh": "string"
+}
+```
+
+<h3 id="get-donor">GET /api/Doador/obter-listagem-de-doadores</h3>
+
+**RESPONSE**
+```json
+[
+ {
+  "nomeCompleto": "string",
+  "email": "string",
+  "dataNascimento": "2000-09-25T00:00:00",
+  "genero": "string",
+  "peso": interiro,
+  "tipoSanguineo": "string",
+  "fatorRh": "string"
+ }
+]
+```
+
+<h3 id="get-search-donations-by-donor">GET /api/Doador/obter-doacoes-por-doador</h3>
+
+**RESPONSE**
+```json
+[
+  {
+    "doadorId": interiro,
+    "dataDoacao": "2024-07-01T00:00:00",
+    "quantidadeML": interiro
+  }
+]
+```
+<h3 id="post-register-donor">POST /api/Doador/cadastrar-doador</h3>
+
+**RESPONSE**
+```json
+  "cadastrarDoador": {
+    "nomeCompleto": "string",
+    "email": "string",
+    "dataNascimento": "2024-06-27T20:55:59.560Z",
+    "genero": "string",
+    "peso": 0,
+    "tipoSanguineo": "string",
+    "fatorRh": "string"
+  }
+```
+<h3 id="put-edit-donor">PUT /api/Doador/cadastrar-doador</h3>
+
+**RESPONSE**
+```json
+"id": 0,
+  "doadorDTO": {
+    "nomeCompleto": "string",
+    "email": "string",
+    "dataNascimento": "2024-06-27T21:08:01.816Z",
+    "genero": "string",
+    "peso": 0,
+    "tipoSanguineo": "string",
+    "fatorRh": "string"
+  }
 ```
 
 <h2 id="contribute">📫 Contribute</h2>
