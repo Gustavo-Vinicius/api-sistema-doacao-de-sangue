@@ -31,9 +31,6 @@ Be sure to replace localhost, YourDatabase, your-username, and your-password wit
 With the settings adjusted, go to the terminal, navigate to the project directory and run the dotnet run command. This command will start the server, allowing you to access the application in the browser. Typically, the application will be available at http://localhost:5000 or http://localhost:5001 if you are using HTTPS.
 By following these steps, you will be able to run the project locally without any problems.
 
-- [NodeJS](https://github.com/)
-- [Git 2](https://github.com)
-
 <h3>Cloning</h3>
 
 How to clone your project
