@@ -12,7 +12,7 @@ using Sistema_de_Doacao_de_Sangue.Infrastructure.Persistence;
 namespace Sistema_de_Doacao_de_Sangue.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240517181426_InitialMigration")]
+    [Migration("20240824001821_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -138,6 +138,34 @@ namespace Sistema_de_Doacao_de_Sangue.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EstoqueSangues");
+                });
+
+            modelBuilder.Entity("Sistema_de_Doacao_de_Sangue.Core.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Sistema_de_Doacao_de_Sangue.Core.Entities.Doacao", b =>

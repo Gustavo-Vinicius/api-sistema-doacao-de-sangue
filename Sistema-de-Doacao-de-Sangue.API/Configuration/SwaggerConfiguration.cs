@@ -9,38 +9,41 @@ namespace Sistema_de_Doacao_de_Sangue.API.Configuration
         {
             services.AddSwaggerGen(x =>
         {
-       // Adiciona o arquivo XML para a própria assembly
-       var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-       var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-       if (File.Exists(xmlPath))
-       {
-           x.IncludeXmlComments(xmlPath);
-       }
 
-       // Adiciona arquivos XML para assemblies referenciadas
-       var currentAssembly = Assembly.GetExecutingAssembly();
-       var xmlDocs = currentAssembly.GetReferencedAssemblies()
-           .Union(new AssemblyName[] { currentAssembly.GetName() })
-           .Select(a => Path.Combine(AppContext.BaseDirectory, $"{a.Name}.xml"))
-           .Where(f => File.Exists(f))
-           .ToArray();
+            // x.SwaggerDoc("v1", new OpenApiInfo { Title = "API de Doação de Sangue", Version = "v1" });
+            // x.AddServer(new OpenApiServer { Url = "http://localhost:8080" });
+            // Adiciona o arquivo XML para a própria assembly
+            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            if (File.Exists(xmlPath))
+            {
+                x.IncludeXmlComments(xmlPath);
+            }
 
-       Array.ForEach(xmlDocs, d =>
-       {
-           x.IncludeXmlComments(d);
-       });
+            // Adiciona arquivos XML para assemblies referenciadas
+            var currentAssembly = Assembly.GetExecutingAssembly();
+            var xmlDocs = currentAssembly.GetReferencedAssemblies()
+                .Union(new AssemblyName[] { currentAssembly.GetName() })
+                .Select(a => Path.Combine(AppContext.BaseDirectory, $"{a.Name}.xml"))
+                .Where(f => File.Exists(f))
+                .ToArray();
 
-       // Configurações adicionais de segurança para JWT
-       x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-       {
-           In = ParameterLocation.Header,
-           Description = "Insira o token JWT no campo de texto a seguir. Exemplo: Bearer {token}",
-           Name = "Authorization",
-           Type = SecuritySchemeType.ApiKey,
-           Scheme = "Bearer"
-       });
+            Array.ForEach(xmlDocs, d =>
+            {
+                x.IncludeXmlComments(d);
+            });
 
-       x.AddSecurityRequirement(new OpenApiSecurityRequirement
+            // Configurações adicionais de segurança para JWT
+            x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                In = ParameterLocation.Header,
+                Description = "Insira o token JWT no campo de texto a seguir. Exemplo: Bearer {token}",
+                Name = "Authorization",
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer"
+            });
+
+            x.AddSecurityRequirement(new OpenApiSecurityRequirement
        {
             {
                 new OpenApiSecurityScheme
@@ -54,7 +57,7 @@ namespace Sistema_de_Doacao_de_Sangue.API.Configuration
                 new string[] {}
             }
        });
-   });
+        });
         }
     }
 }

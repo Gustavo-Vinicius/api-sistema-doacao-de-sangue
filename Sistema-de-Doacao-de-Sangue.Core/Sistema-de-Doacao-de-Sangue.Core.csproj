@@ -9,8 +9,10 @@
   <ItemGroup>
     <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.4" />
     <PackageReference Include="iTextSharp" Version="5.5.13.4" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.0.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols" Version="8.0.2" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="8.0.2" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.0.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.2" />
   </ItemGroup>
 
 </Project>

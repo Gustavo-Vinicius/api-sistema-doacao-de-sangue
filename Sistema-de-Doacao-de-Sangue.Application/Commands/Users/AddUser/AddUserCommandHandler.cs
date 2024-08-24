@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MediatR;
 using Sistema_de_Doacao_de_Sangue.Core.Entities;
 using Sistema_de_Doacao_de_Sangue.Core.Repositories;
@@ -19,7 +15,10 @@ namespace Sistema_de_Doacao_de_Sangue.Application.Commands.Users.AddUser
         {
             var addUser = new User()
             {
-                Username = request.Username,
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Email = request.Email,
+                Username = $"{request.FirstName} {request.LastName}",
                 Password = request.Password
             };
 

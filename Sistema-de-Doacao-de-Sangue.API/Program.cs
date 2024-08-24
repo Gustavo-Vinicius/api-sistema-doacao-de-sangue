@@ -1,4 +1,3 @@
-using System.Text;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -6,9 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Sistema_de_Doacao_de_Sangue.API.Configuration;
 using Sistema_de_Doacao_de_Sangue.Application.Queries.DoadoresQueries.ObterDoadorPorId;
 using Sistema_de_Doacao_de_Sangue.Infrastructure.Persistence;
-using Microsoft.IdentityModel.Tokens;
-using Sistema_de_Doacao_de_Sangue.Core.Utils;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +22,21 @@ builder.Services.AddDependencyInjection();
 
 builder.Services.AddSwaggerConfiguration();
 
+// builder.Services.AddHttpsRedirection(options =>
+// {
+//     options.HttpsPort = 5001; // ou a porta correta, se você estiver usando HTTPS
+// });
+
+// builder.Services.AddCors(options => 
+// {
+//     options.AddPolicy("AllowAllOrigins",policy => 
+//     {
+//         policy.AllowAnyMethod();
+//         policy.AllowAnyHeader();
+//         policy.AllowAnyOrigin();
+//     });
+// });
+
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -41,8 +52,10 @@ builder.Services.AddDbContext<AppDbContext>(p => p.UseSqlServer(connectionString
 
 var app = builder.Build();
 
+// app.UseCors("AllowAllOrigins");
+
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

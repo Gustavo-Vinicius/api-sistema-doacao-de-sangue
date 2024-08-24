@@ -1,0 +1,25 @@
+# Ignora a pasta bin/
+bin/
+
+# Ignora a pasta obj/
+obj/
+
+# Ignora arquivos de configuração do Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignora arquivos temporários
+*.tmp
+
+# Ignora pastas de build do .NET
+/build/
+/publish/
+
+# Ignora arquivos de logs
+*.log
+
+# Ignora arquivos de testes
+*.test.dll
+*.test.cs
